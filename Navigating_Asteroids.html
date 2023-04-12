@@ -466,7 +466,7 @@
 				super()
 				 this.buffer = gl.createBuffer();
 				 gl.bindBuffer(gl.ARRAY_BUFFER, this.buffer);
-				 this.collissionRadius = 11;
+				 this.collissionRadius = 0.4;
 				 
 				 this.vertices =
 				 [	
@@ -511,7 +511,7 @@
 
 				this.loc = [0, 0, 0];
 				this.rot = [0.0,0.0,0.0];
-				this.scale = [50,50,50];
+				this.scale = [5,5,5];
 				
 			}
 			
@@ -791,7 +791,7 @@
 					console.log(this.xPosRand + ", " + this.yPosRand + ", " + this.zPosRand);
 					
 					this.createObject(1, Asteroid, [this.xPosRand, this.yPosRand, this.zPosRand], [0, 0, 0]);
-					this.Keys = [];
+					
 				}
 				
 			}
@@ -936,13 +936,13 @@
 					switch(type)
 					{
 						case 0:
-							this.visual[id] = temp;
+							this.visual.push(temp);
 						break;
 						case 1:
-							this.solid[id] = temp;
+							this.solid.push(temp);
 						break;
 						case 2:
-							this.trigger[id] = temp;
+							this.trigger.push(temp);
 						break;
 						default:
 						break;
